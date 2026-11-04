@@ -7,9 +7,6 @@ endpoint e fica disponível num **Databricks App** de chat.
 
 ![Arquitetura do agente de IA no Databricks](docs/images/arquitetura-visao-geral.png)
 
-**App publicado:** [customer-service-portal](https://customer-service-portal-7474660542216006.aws.databricksapps.com/)
-(precisa de login no workspace; o compute fica desligado quando não está em uso).
-
 ---
 
 ## O que o agente responde
