@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="830" viewBox="0 0 1600 830" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .titulo { font-size: 30px; font-weight: 700; fill: #0F172A; }
+      .sub    { font-size: 17px; fill: #475569; }
+      .raia   { font-size: 15px; font-weight: 700; letter-spacing: .5px; }
+      .h      { font-size: 17px; font-weight: 700; fill: #0F172A; }
+      .t      { font-size: 14px; fill: #334155; }
+      .m      { font-size: 13px; fill: #475569; font-family: Consolas, 'Courier New', monospace; }
+      .rot    { font-size: 13px; font-weight: 600; fill: #334155; }
+      .caixa  { fill: #FFFFFF; stroke-width: 1.5; }
+      .fio    { stroke: #334155; stroke-width: 2; fill: none; marker-end: url(#seta); }
+    </style>
+  </defs>
+
+  <!-- fundo claro explícito: lê bem no tema escuro do GitHub -->
+  <rect width="1600" height="830" fill="#FFFFFF"/>
+
+  <text x="40" y="62" class="titulo">E2E Agentic AI no Databricks</text>
+  <text x="40" y="94" class="sub">Agente de atendimento ao cliente: RAG em 509 manuais em PDF + funções do Unity Catalog, servido num Databricks App</text>
+
+  <!-- ===== Fontes ===== -->
+  <text x="40" y="150" class="raia" fill="#64748B">FONTES</text>
+  <rect x="40" y="175" width="220" height="140" rx="12" class="caixa" stroke="#94A3B8"/>
+  <text x="60" y="210" class="h">509 PDFs</text>
+  <text x="60" y="236" class="t">manuais de produto</text>
+  <text x="60" y="260" class="t">no Volume do</text>
+  <text x="60" y="282" class="t">Unity Catalog</text>
+
+  <rect x="40" y="545" width="220" height="140" rx="12" class="caixa" stroke="#94A3B8"/>
+  <text x="60" y="580" class="h">3 CSVs</text>
+  <text x="60" y="606" class="m">products</text>
+  <text x="60" y="628" class="m">policies</text>
+  <text x="60" y="650" class="m">cust_service_data</text>
+
+  <!-- ===== Raia não estruturada ===== -->
+  <rect x="300" y="130" width="600" height="320" rx="16" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="320" y="160" class="raia" fill="#1D4ED8">BASE NÃO ESTRUTURADA · RAG</text>
+
+  <rect x="320" y="185" width="175" height="120" rx="10" class="caixa" stroke="#2563EB"/>
+  <text x="335" y="214" class="h">1 · Parse</text>
+  <text x="335" y="240" class="t">PyPDF2 extrai</text>
+  <text x="335" y="262" class="t">o texto de cada PDF</text>
+  <text x="335" y="288" class="m">product_docs</text>
+
+  <rect x="512" y="185" width="175" height="120" rx="10" class="caixa" stroke="#2563EB"/>
+  <text x="527" y="214" class="h">2 · Enriquecer</text>
+  <text x="527" y="240" class="t">join com products,</text>
+  <text x="527" y="262" class="t">texto em tags XML</text>
+  <text x="527" y="288" class="m">indexed_doc</text>
+
+  <rect x="704" y="185" width="176" height="120" rx="10" class="caixa" stroke="#2563EB"/>
+  <text x="719" y="214" class="h">3 · Vector Search</text>
+  <text x="719" y="240" class="t">embedding Qwen3 0.6B</text>
+  <text x="719" y="262" class="t">550 docs indexados</text>
+  <text x="719" y="288" class="t">busca HYBRID</text>
+
+  <path d="M495,245 L510,245" class="fio"/>
+  <path d="M687,245 L702,245" class="fio"/>
+
+  <text x="320" y="345" class="t">Tabela de origem:</text>
+  <text x="450" y="345" class="m">product_docs_combined</text>
+  <text x="320" y="372" class="t">Índice:</text>
+  <text x="450" y="372" class="m">product_docs_index (Delta Sync)</text>
+  <text x="320" y="399" class="t">Endpoint:</text>
+  <text x="450" y="399" class="m">vs_endpoint_2</text>
+  <text x="320" y="426" class="t">Sincronização manual (TRIGGERED): "Sync now" após atualizar a tabela</text>
+
+  <!-- ===== Raia estruturada ===== -->
+  <rect x="300" y="490" width="600" height="250" rx="16" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+  <text x="320" y="520" class="raia" fill="#047857">BASE ESTRUTURADA · DELTA + UNITY CATALOG</text>
+
+  <rect x="320" y="545" width="250" height="140" rx="10" class="caixa" stroke="#059669"/>
+  <text x="335" y="575" class="h">Tabelas Delta</text>
+  <text x="335" y="603" class="m">policies</text>
+  <text x="335" y="623" class="t">6 políticas</text>
+  <text x="335" y="651" class="m">cust_service_data</text>
+  <text x="335" y="671" class="t">1.023 atendimentos</text>
+
+  <rect x="595" y="545" width="285" height="140" rx="10" class="caixa" stroke="#059669"/>
+  <text x="610" y="575" class="h">4 · Funções no UC</text>
+  <text x="610" y="605" class="m">get_return_policy(</text>
+  <text x="626" y="625" class="m">policy_name)</text>
+  <text x="610" y="653" class="m">get_service_history(</text>
+  <text x="626" y="673" class="m">user_email)</text>
+  <path d="M570,615 L593,615" class="fio"/>
+  <text x="320" y="718" class="t">Consultas determinísticas: o agente não inventa política nem histórico</text>
+
+  <!-- fontes → raias -->
+  <path d="M260,245 L318,245" class="fio"/>
+  <path d="M260,615 L318,615" class="fio"/>
+  <path d="M260,580 L282,580 L282,116 L600,116 L600,183" class="fio" stroke-dasharray="6 5"/>
+  <text x="608" y="160" class="rot">products (CSV)</text>
+
+  <!-- ===== Agente ===== -->
+  <rect x="950" y="230" width="270" height="400" rx="16" fill="#FFF1EE" stroke="#FF3621" stroke-width="2"/>
+  <text x="970" y="265" class="h">5 · Agente (tool calling)</text>
+  <text x="970" y="295" class="t">ResponsesAgent do MLflow</text>
+  <text x="970" y="322" class="t">LLM:</text>
+  <text x="1008" y="322" class="m">gpt-oss-120b</text>
+  <text x="970" y="358" class="h" style="font-size:15px">3 ferramentas</text>
+  <text x="970" y="384" class="t">• busca nos manuais</text>
+  <text x="984" y="404" class="t">(Vector Search)</text>
+  <text x="970" y="430" class="t">• política de troca/devolução</text>
+  <text x="970" y="456" class="t">• histórico do cliente</text>
+  <line x1="970" y1="480" x2="1200" y2="480" stroke="#FECACA"/>
+  <text x="970" y="506" class="t">Avaliação com LLM judges:</text>
+  <text x="970" y="526" class="t">RelevanceToQuery, Safety</text>
+  <text x="970" y="554" class="t">Registro no Unity Catalog:</text>
+  <text x="970" y="576" class="m">customer_service_model</text>
+  <text x="970" y="604" class="t">Traces do MLflow em cada pergunta</text>
+
+  <!-- raias → agente -->
+  <path d="M880,245 L915,245 L915,320 L948,320" class="fio"/>
+  <text x="905" y="225" class="rot">Vector Search</text>
+  <path d="M880,615 L915,615 L915,560 L948,560" class="fio"/>
+  <text x="905" y="660" class="rot">UC Functions</text>
+
+  <!-- ===== Serving, App, Usuário ===== -->
+  <rect x="1270" y="230" width="290" height="125" rx="12" class="caixa" stroke="#FF3621" stroke-width="1.5"/>
+  <text x="1290" y="265" class="h">6 · Model Serving</text>
+  <text x="1290" y="292" class="t">endpoint REST do agente</text>
+  <text x="1290" y="316" class="t">versão 5 · scale-to-zero</text>
+  <text x="1290" y="340" class="t">via agents.deploy()</text>
+
+  <rect x="1270" y="420" width="290" height="125" rx="12" class="caixa" stroke="#1B3139" stroke-width="1.5"/>
+  <text x="1290" y="455" class="h">7 · Databricks App</text>
+  <text x="1290" y="482" class="m">customer-service-portal</text>
+  <text x="1290" y="506" class="t">chat em React + Express</text>
+  <text x="1290" y="530" class="t">(template oficial)</text>
+
+  <rect x="1270" y="610" width="290" height="90" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1290" y="645" class="h">Usuário final</text>
+  <text x="1290" y="672" class="t">pergunta em linguagem natural</text>
+
+  <path d="M1220,292 L1268,292" class="fio"/>
+  <path d="M1415,355 L1415,418" class="fio"/>
+  <path d="M1415,545 L1415,608" class="fio" marker-start="url(#seta)"/>
+
+  <!-- rodapé -->
+  <line x1="40" y1="770" x2="1560" y2="770" stroke="#E2E8F0"/>
+  <text x="40" y="805" class="t">Gabriel Silva · github.com/Gabrielxdev/E2E-Agentic- · Databricks Free Edition</text>
+  <text x="1560" y="805" class="t" text-anchor="end">Baseado no curso de Agentic AI da DataBeli</text>
+</svg>
